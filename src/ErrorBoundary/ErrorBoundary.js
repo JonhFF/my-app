@@ -5,9 +5,11 @@ class ErrorBoundary extends Component{
         hasError: false, 
         errorMessage: ''
     }
+
     componentDidCatch = (error, info) => {
         this.setState({hasError: true, errorMessage: error});        
     }
+
     render() {
         if(this.state.hasError){
             return<h1>{this.state.errorMessage}</h1>
@@ -16,4 +18,5 @@ class ErrorBoundary extends Component{
         }
     }
 }
+
 export default ErrorBoundary;
